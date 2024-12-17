@@ -1,0 +1,59 @@
+﻿@page
+@model MyApp.Namespace.startModel
+@{
+    ViewData["Title"] = "Start";
+}
+
+
+<main class="container" id="initial-config">
+    <section class="row">
+        <div class="col-md-12 text-center pt-5 pb-3">
+            <h1>Please select a provider</h1>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card text-center border-0 shadow genai-option" data-id="openai">
+                <div class="text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png"
+                        style="width: 200px;" />
+                </div>
+                <h5><b>Chat GPT</b></h5>
+                <a href="#" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card text-center border-0 shadow genai-option" data-id="gemini">
+                <div class="text-center">
+                    <img src="https://registry.npmmirror.com/@@lobehub/icons-static-png/latest/files/dark/gemini-color.png"
+                        style="width: 200px;" />
+                </div>
+                <h5><b>Google - Gemini</b></h5>
+                <a href="#" class="stretched-link"></a>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="container" id="config-model" hidden>
+    <section class="row">
+        <div class="col-md-12 pt-5">
+            <div class="card border-0 shadow p-3">
+                <section class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <label><b>API Key</b></label>
+                        <input type="password" class="form-control" id="txt-apikey" />
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <label><b>Model</b></label>
+                        <select class="form-select" id="sl-model"></select>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="col-md-12 text-end pt-3">
+            <button type="button" class="btn btn-primary btn-lg" id="btn-save-provider">
+                Save
+            </button>
+        </div>
+    </section>
+</main>
+<script src="~/js/fetcher.js"></script>
+<script src="~/js/start.js"></script>

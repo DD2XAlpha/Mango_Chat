@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mango_Chat</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Mango_Chat.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+
+        .selected-border{
+            box-shadow: 0 0 5px 2px skyblue !important;
+        }
+    </style>
+
+    <script>
+        if (typeof module === 'object') { window.module = module; module = undefined; }
+    </script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+
+
+    
+</head>
+
+<body>
+    <div class="d-flex flex-column vh-100"
+        style="width: 250px; background-color: #f0f0f0; position: fixed; top: 0; left: 0;">
+        <div class="">
+            <div class="row">
+                <div class="col-md-8 pt-3">
+                    <a href="@Url.Content("~/index")" class="navbar-brand">
+                        <img src="~/img/mango.png" style="max-width: 30px; margin-left: 10px;" />
+                    </a>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-light btn-sm m-2 mt-3"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mt-auto">
+            <hr class="my-2" />
+            <div class="pb-2 text-center">
+                <button class="btn btn-light btn-sm"><i class="fa-solid fa-plug"></i></button>
+                <button class="btn btn-light btn-sm"><i class="fa-solid fa-gear"></i></button>
+                <br>
+                <span>v0.0.1-F</span>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 250px; height: 100vh; overflow-y: auto;">
+        <div class="container">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
